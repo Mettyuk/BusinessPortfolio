@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gyöngy Nail Lounge — Körömszalon Budapest</title>
+<meta name="description" content="Manikűr, gél lakk, műköröm, nail art és spa pedikűr Budapesten. Ajándékutalvány és online időpontfoglalás.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap&subset=latin-ext" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%23f3d6d2'/><circle cx='16' cy='16' r='6' fill='%23fff' stroke='%23b8915a' stroke-width='1.5'/></svg>">
+<style>
+:root{--blush:#fbf1ee;--blush-2:#f6e1dc;--rose:#d48a8a;--rose-d:#b86b6e;--plum:#3b2430;--gold:#b8915a;--white:#fffaf8;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif;--ease:cubic-bezier(.2,.7,.1,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--blush);color:var(--plum);font-family:var(--sans);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1}
+h2{font-size:clamp(2.3rem,4.6vw,3.8rem)}
+h2 em,h1 em{color:var(--rose-d)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+.eyebrow{display:inline-flex;align-items:center;gap:.6em;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:1em 1.9em;border-radius:999px;font-family:var(--sans);font-weight:500;font-size:.92rem;cursor:pointer;border:1px solid transparent;transition:all .4s var(--ease)}
+.btn-rose{background:var(--plum);color:var(--white)}
+.btn-rose:hover{background:var(--rose-d);transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(184,107,110,.6)}
+.btn-line{border-color:rgba(59,36,48,.25);color:var(--plum)}
+.btn-line:hover{border-color:var(--plum);background:var(--white)}
+section{padding:clamp(80px,10vw,130px) 0}
+.center{text-align:center}
+.center .eyebrow::after{content:"";width:28px;height:1px;background:var(--gold)}
+
+/* nav */
+nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;width:min(1100px,calc(100% - 24px));display:flex;align-items:center;justify-content:space-between;padding:10px 10px 10px 26px;border-radius:999px;background:rgba(255,250,248,.75);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.8);box-shadow:0 10px 40px -15px rgba(59,36,48,.18)}
+.logo{font-family:var(--serif);font-size:1.45rem;font-style:italic;display:flex;align-items:center;gap:.4em}
+.logo i{width:11px;height:11px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,#e8cfc4 60%,var(--gold));box-shadow:0 0 0 2px rgba(184,145,90,.2)}
+.links{display:flex;gap:28px;align-items:center;font-size:.9rem}
+.links a:not(.btn):hover{color:var(--rose-d)}
+.links .btn{padding:.75em 1.4em}
+.burger{display:none;background:var(--plum);color:#fff;border:0;border-radius:999px;padding:.7em 1.2em;font-family:var(--sans);font-size:.85rem;cursor:pointer}
+
+/* hero */
+.hero{padding:150px 0 70px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,#f3d0ca 0%,transparent 65%);top:-300px;left:50%;transform:translateX(-50%);z-index:-1}
+.hero h1{font-size:clamp(3rem,7.4vw,6.4rem);margin:22px auto 24px;max-width:960px}
+.hero h1 em{font-style:italic}
+.hero p.sub{max-width:540px;margin:0 auto 36px;color:#6d5560}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.arches{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:clamp(10px,2vw,24px);align-items:end;max-width:1000px;margin:70px auto 0;padding:0 clamp(16px,4vw,40px)}
+.arch{border-radius:999px 999px 24px 24px;overflow:hidden;aspect-ratio:3/4.2;box-shadow:0 30px 60px -25px rgba(59,36,48,.35);animation:up 1.3s var(--ease) both}
+.arch:nth-child(1){animation-delay:.15s}.arch:nth-child(2){aspect-ratio:3/4.6;animation-delay:0s}.arch:nth-child(3){animation-delay:.3s}
+.arch img{width:100%;height:100%;object-fit:cover}
+@keyframes up{from{opacity:0;transform:translateY(80px)}}
+.float-tag{position:absolute;background:var(--white);padding:.7em 1.1em;border-radius:16px;font-size:.82rem;box-shadow:0 14px 30px -12px rgba(59,36,48,.3);display:flex;align-items:center;gap:.6em;animation:bob 5s ease-in-out infinite}
+.float-tag b{font-family:var(--serif);font-size:1.1rem;font-weight:500}
+@keyframes bob{50%{transform:translateY(-10px)}}
+
+/* ribbon */
+.ribbon{background:var(--plum);color:var(--blush);padding:20px 0;overflow:hidden;transform:rotate(-1.5deg);margin:20px -20px}
+.ribbon div{display:flex;gap:40px;width:max-content;animation:mq 32s linear infinite;font-family:var(--serif);font-style:italic;font-size:1.5rem;align-items:center}
+.ribbon span.s{color:var(--gold);font-style:normal;font-size:1rem}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* menu / services */
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px}
+.svc{background:var(--white);border-radius:28px;padding:34px 30px;position:relative;overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s}
+.svc:hover{transform:translateY(-8px);box-shadow:0 30px 50px -25px rgba(59,36,48,.3)}
+.svc .ico{width:56px;height:56px;border-radius:50%;background:var(--blush-2);display:grid;place-items:center;font-size:1.5rem;margin-bottom:22px}
+.svc h3{font-size:1.6rem;margin-bottom:8px}
+.svc>p{color:#7a6570;font-size:.93rem;margin-bottom:22px}
+.svc ul{list-style:none;border-top:1px dashed rgba(59,36,48,.15)}
+.svc li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px dashed rgba(59,36,48,.15);font-size:.92rem}
+.svc li span:last-child{font-weight:600;color:var(--rose-d);white-space:nowrap}
+.svc li small{display:block;color:#9a8790;font-size:.78rem}
+.svc.feat{background:var(--plum);color:var(--blush)}
+.svc.feat>p,.svc.feat li small{color:rgba(251,241,238,.6)}
+.svc.feat .ico{background:rgba(255,255,255,.1)}
+.svc.feat ul,.svc.feat li{border-color:rgba(255,255,255,.15)}
+.svc.feat li span:last-child{color:#f0bcb6}
+.svc .pop{position:absolute;top:24px;right:24px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;background:var(--gold);color:#fff;padding:.35em .9em;border-radius:999px}
+
+/* gallery */
+.gallery-sec{background:var(--white);border-radius:48px;margin:0 clamp(8px,2vw,24px)}
+.filters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:36px 0 46px}
+.filters button{background:transparent;border:1px solid rgba(59,36,48,.18);border-radius:999px;padding:.6em 1.3em;font-family:var(--sans);font-size:.88rem;color:var(--plum);cursor:pointer;transition:all .3s}
+.filters button.on{background:var(--plum);color:#fff;border-color:var(--plum)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.item{border-radius:24px;overflow:hidden;aspect-ratio:1;position:relative;transition:opacity .5s,transform .5s var(--ease)}
+.item img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.item:hover img{transform:scale(1.07)}
+.item figcaption{position:absolute;left:14px;bottom:14px;background:rgba(255,250,248,.9);backdrop-filter:blur(6px);padding:.4em .9em;border-radius:999px;font-size:.78rem;opacity:0;transform:translateY(10px);transition:all .4s var(--ease)}
+.item:hover figcaption{opacity:1;transform:none}
+.item.hide{display:none}
+
+/* about split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,100px);align-items:center}
+.split-img{position:relative}
+.split-img img{border-radius:300px 300px 30px 30px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.split-img .circle{position:absolute;right:-20px;bottom:40px;width:150px;height:150px;border-radius:50%;background:var(--gold);color:#fff;display:grid;place-items:center;text-align:center;font-family:var(--serif);font-size:1.05rem;line-height:1.25;padding:20px;box-shadow:0 20px 40px -15px rgba(184,145,90,.6)}
+.split-img .circle b{font-size:2.2rem;display:block;font-weight:500}
+.checks{list-style:none;display:grid;gap:14px;margin:30px 0 36px}
+.checks li{display:flex;gap:14px;align-items:flex-start}
+.checks li::before{content:"✓";flex:none;width:26px;height:26px;border-radius:50%;background:var(--blush-2);color:var(--rose-d);display:grid;place-items:center;font-size:.8rem;font-weight:700;margin-top:1px}
+.split p{color:#6d5560}
+
+/* voucher */
+.voucher-sec{background:linear-gradient(135deg,var(--blush-2),#f1d3cc)}
+.voucher-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+.card{aspect-ratio:1.7;border-radius:26px;padding:clamp(22px,3vw,36px);color:#fff;position:relative;overflow:hidden;background:linear-gradient(135deg,#3b2430 0%,#6e3c4f 55%,#b86b6e 100%);box-shadow:0 40px 70px -30px rgba(59,36,48,.7);display:flex;flex-direction:column;justify-content:space-between;transform:rotate(-4deg);transition:transform .6s var(--ease)}
+.card:hover{transform:rotate(0) scale(1.02)}
+.card::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;border:1px solid rgba(255,255,255,.15);right:-80px;top:-120px}
+.card::after{content:"";position:absolute;width:200px;height:200px;border-radius:50%;border:1px solid rgba(184,145,90,.5);right:-20px;top:-60px}
+.card .top{display:flex;justify-content:space-between;align-items:flex-start;font-family:var(--serif);font-style:italic;font-size:1.4rem}
+.card .top span{font-family:var(--sans);font-style:normal;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:#e6c999}
+.card .val{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.6rem);line-height:1}
+.card .bottom{display:flex;justify-content:space-between;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.amounts{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0}
+.amounts button{background:var(--white);border:1px solid transparent;border-radius:14px;padding:.8em 1.2em;font-family:var(--sans);font-weight:600;font-size:.95rem;color:var(--plum);cursor:pointer;transition:all .3s}
+.amounts button.on{border-color:var(--plum);box-shadow:0 0 0 3px rgba(59,36,48,.1)}
+
+/* reviews */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.rev{background:var(--white);border-radius:26px;padding:32px}
+.rev .st{color:var(--gold);letter-spacing:.2em;margin-bottom:14px}
+.rev p{font-family:var(--serif);font-size:1.15rem;line-height:1.5;margin-bottom:22px}
+.rev .who{display:flex;align-items:center;gap:12px;font-size:.88rem}
+.rev .av{width:40px;height:40px;border-radius:50%;background:var(--blush-2);display:grid;place-items:center;font-weight:600;color:var(--rose-d)}
+.rev .who small{display:block;color:#9a8790}
+
+/* booking */
+.book{background:var(--plum);color:var(--blush);border-radius:48px;margin:0 clamp(8px,2vw,24px)}
+.book h2 em{color:#f0bcb6}
+.book .eyebrow{color:#e6c999}.book .eyebrow::before,.book .eyebrow::after{background:#e6c999}
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:10px}
+.hours{list-style:none;margin-top:30px}
+.hours li{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.95rem}
+.hours li.today{color:#f0bcb6;font-weight:600}
+form{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:28px;padding:clamp(22px,3vw,34px);display:grid;gap:16px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form label span{display:block;font-size:.8rem;margin-bottom:6px;color:rgba(251,241,238,.65)}
+form input,form select{width:100%;padding:13px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-family:var(--sans);font-size:.95rem;transition:border-color .3s}
+form select option{color:var(--plum)}
+form input:focus,form select:focus{outline:none;border-color:#f0bcb6}
+form input::placeholder{color:rgba(255,255,255,.35)}
+input[type=date],input[type=time]{color-scheme:dark}
+form .btn{justify-content:center;background:#f0bcb6;color:var(--plum);font-weight:600}
+form .btn:hover{background:#fff}
+.ok{display:none;text-align:center;padding:50px 20px}
+.ok h3{font-size:2.2rem;margin-bottom:8px}
+
+/* insta */
+.insta{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:50px}
+.insta a{aspect-ratio:1;overflow:hidden;position:relative}
+.insta img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.insta a::after{content:"♡";position:absolute;inset:0;display:grid;place-items:center;font-size:1.8rem;color:#fff;background:rgba(59,36,48,.4);opacity:0;transition:opacity .3s}
+.insta a:hover::after{opacity:1}
+.insta a:hover img{transform:scale(1.1)}
+
+footer{padding:70px 0 40px}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.4fr;gap:40px;align-items:start}
+.foot h4{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:600}
+.foot p,.foot a{display:block;font-size:.92rem;color:#6d5560}
+.foot a:hover{color:var(--rose-d)}
+.foot iframe{width:100%;height:180px;border:0;border-radius:20px;filter:grayscale(.5) sepia(.2) hue-rotate(-20deg)}
+.copy{margin-top:50px;font-size:.8rem;color:#9a8790;text-align:center}
+
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.demo-badge{position:fixed;left:16px;bottom:16px;z-index:90;background:var(--plum);color:#fff;font-size:.75rem;padding:.7em 1.1em;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.demo-badge a{text-decoration:underline;text-underline-offset:3px}
+.in-frame .demo-badge{display:none}
+.in-frame .rv{opacity:1;transform:none;transition:none}
+
+@media (max-width:960px){
+  .menu-grid,.rev-grid{grid-template-columns:1fr 1fr}
+  .split,.voucher-wrap,.book-grid{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr 1fr}
+  .insta{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:760px){
+  .links{position:fixed;top:70px;left:0;right:0;flex-direction:column;background:var(--white);padding:30px;border-radius:28px;box-shadow:0 30px 60px -20px rgba(59,36,48,.3);opacity:0;pointer-events:none;transform:translateY(-10px);transition:all .35s var(--ease)}
+  nav.open .links{opacity:1;pointer-events:auto;transform:none}
+  .burger{display:block}
+  .menu-grid,.rev-grid,.grid,.fr{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr 1fr;gap:10px}
+  .item{border-radius:16px}
+  .float-tag{display:none}
+  .foot{grid-template-columns:1fr}
+  .split-img .circle{right:0;width:120px;height:120px;font-size:.9rem}
+  .split-img .circle b{font-size:1.7rem}
+  .gallery-sec,.book{border-radius:30px}
+}
+</style>
+</head>
+<body>
+<script>if(window.self!==window.top)document.documentElement.classList.add('in-frame')</script>
+
+<nav id="nav">
+  <a href="#" class="logo"><i></i>Gyöngy</a>
+  <div class="links" id="links">
+    <a href="#szolgaltatasok">Szolgáltatások</a>
+    <a href="#galeria">Galéria</a>
+    <a href="#utalvany">Ajándékutalvány</a>
+    <a href="#velemenyek">Vélemények</a>
+    <a href="#foglalas" class="btn btn-rose">Foglalás</a>
+  </div>
+  <button class="burger" id="burger">Menü</button>
+</nav>
+
+<header class="hero">
+  <span class="eyebrow">Nail Lounge · Budapest XIII.</span>
+  <h1>Apró részletek,<br><em>nagy</em> önbizalom.</h1>
+  <p class="sub">Manikűr, gél lakk, műköröm és egyedi nail art egy nyugodt, gyönyörű helyen — ahol a kávé mindig friss, és rád mindig van idő.</p>
+  <div class="hero-btns">
+    <a href="#foglalas" class="btn btn-rose">Időpontot kérek ✦</a>
+    <a href="#galeria" class="btn btn-line">Munkáink</a>
+  </div>
+  <div style="position:relative">
+    <div class="arches">
+      <div class="arch"><img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=600&q=80&auto=format&fit=crop" alt="Natúr manikűr"></div>
+      <div class="arch"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=700&q=80&auto=format&fit=crop" alt="Nail art"></div>
+      <div class="arch"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=600&q=80&auto=format&fit=crop" alt="Pasztell gél lakk"></div>
+    </div>
+    <div class="float-tag" style="left:4%;top:18%"><b>4.9★</b> 280+ értékelés</div>
+    <div class="float-tag" style="right:4%;top:48%;animation-delay:-2.5s">💅 <b>3 hét</b> tartósság</div>
+  </div>
+</header>
+
+<div class="ribbon" aria-hidden="true"><div>
+  <span>Gél lakk</span><span class="s">✦</span><span>Műköröm</span><span class="s">✦</span><span>Nail art</span><span class="s">✦</span><span>Spa pedikűr</span><span class="s">✦</span><span>Francia manikűr</span><span class="s">✦</span><span>Babyboomer</span><span class="s">✦</span>
+  <span>Gél lakk</span><span class="s">✦</span><span>Műköröm</span><span class="s">✦</span><span>Nail art</span><span class="s">✦</span><span>Spa pedikűr</span><span class="s">✦</span><span>Francia manikűr</span><span class="s">✦</span><span>Babyboomer</span><span class="s">✦</span>
+</div></div>
+
+<section id="szolgaltatasok">
+  <div class="wrap">
+    <div class="center rv"><span class="eyebrow">Szolgáltatások</span><h2 style="margin-top:18px">Válaszd ki a <em>kedvenced</em></h2></div>
+    <div class="menu-grid">
+      <div class="svc rv">
+        <div class="ico">🤍</div><h3>Manikűr</h3><p>Ápolt, egészséges körmök — természetes szépség.</p>
+        <ul>
+          <li><span>Klasszikus manikűr<small>45 perc</small></span><span>6 500 Ft</span></li>
+          <li><span>Manikűr + lakkozás<small>60 perc</small></span><span>8 500 Ft</span></li>
+          <li><span>Japán manikűr<small>50 perc</small></span><span>9 000 Ft</span></li>
+        </ul>
+      </div>
+      <div class="svc feat rv">
+        <span class="pop">Legnépszerűbb</span>
+        <div class="ico">💅</div><h3>Gél lakk &amp; műköröm</h3><p>Hosszan tartó, csillogó, tökéletes körmök.</p>
+        <ul>
+          <li><span>Gél lakk<small>60 perc · 3 hét tartósság</small></span><span>11 500 Ft</span></li>
+          <li><span>Műköröm építés<small>120 perc</small></span><span>18 900 Ft</span></li>
+          <li><span>Töltés<small>90 perc</small></span><span>14 900 Ft</span></li>
+          <li><span>Babyboomer<small>+ 30 perc</small></span><span>+3 000 Ft</span></li>
+        </ul>
+      </div>
+      <div class="svc rv">
+        <div class="ico">✨</div><h3>Nail art</h3><p>Egyedi minták, kövek, fóliák — a te ötleted alapján.</p>
+        <ul>
+          <li><span>Egyszerű minta<small>2 körömre</small></span><span>1 500 Ft</span></li>
+          <li><span>Francia<small>Mind a 10 köröm</small></span><span>2 500 Ft</span></li>
+          <li><span>Egyedi design<small>Konzultáció alapján</small></span><span>4 000 Ft-tól</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-sec" id="galeria">
+  <div class="wrap">
+    <div class="center rv"><span class="eyebrow">Galéria</span><h2 style="margin-top:18px">Friss <em>munkáink</em></h2></div>
+    <div class="filters rv">
+      <button class="on" data-f="all">Összes</button>
+      <button data-f="art">Nail art</button>
+      <button data-f="minimal">Minimal</button>
+      <button data-f="color">Színes</button>
+    </div>
+    <div class="grid rv" id="grid">
+      <figure class="item" data-c="art"><img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=600&q=75&auto=format&fit=crop" alt=""><figcaption>„Love” nail art</figcaption></figure>
+      <figure class="item" data-c="minimal"><img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=600&q=75&auto=format&fit=crop" alt=""><figcaption>Natúr nude</figcaption></figure>
+      <figure class="item" data-c="art"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=75&auto=format&fit=crop" alt=""><figcaption>Teknőc minta</figcaption></figure>
+      <figure class="item" data-c="color"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=600&q=75&auto=format&fit=crop" alt=""><figcaption>Pasztell mix</figcaption></figure>
+      <figure class="item" data-c="minimal"><img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=600&q=75&auto=format&fit=crop" alt=""><figcaption>Precíz előkészítés</figcaption></figure>
+      <figure class="item" data-c="color"><img src="https://images.unsplash.com/photo-1599948128020-9a44505b0d1b?w=600&q=75&auto=format&fit=crop" alt=""><figcaption>Nyári színek</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="split-img rv">
+      <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=900&q=80&auto=format&fit=crop" alt="Manikűr a szalonban">
+      <div class="circle"><span><b>6+</b>év szeretettel</span></div>
+    </div>
+    <div class="rv">
+      <span class="eyebrow">Miért mi?</span>
+      <h2 style="margin:18px 0 22px">Ahol a higiénia és a <em>szépség</em> kéz a kézben jár.</h2>
+      <p>A Gyöngy Nail Lounge-ot azért hoztuk létre, hogy a körömápolás ne csak egy gyors „letudandó” program legyen, hanem egy kis feltöltődés a hét közepén.</p>
+      <ul class="checks">
+        <li>Minden eszközt autoklávban sterilizálunk, egyszer használatos reszelőkkel dolgozunk</li>
+        <li>Prémium, HEMA-mentes géllakkok — érzékeny bőrre is</li>
+        <li>Képzett, folyamatosan továbbképzett körmösök</li>
+        <li>Ingyenes kávé, tea és prosecco minden vendégnek</li>
+      </ul>
+      <a href="#foglalas" class="btn btn-rose">Foglalok időpontot</a>
+    </div>
+  </div>
+</section>
+
+<section class="voucher-sec" id="utalvany">
+  <div class="wrap voucher-wrap">
+    <div class="rv">
+      <div class="card">
+        <div class="top">Gyöngy <span>Ajándékutalvány</span></div>
+        <div class="val" id="cardVal">15 000 Ft</div>
+        <div class="bottom"><span>Nail Lounge · Budapest</span><span>Nº 0247</span></div>
+      </div>
+    </div>
+    <div class="rv">
+      <span class="eyebrow">Ajándékutalvány</span>
+      <h2 style="margin:18px 0 18px">A tökéletes <em>ajándék</em> — mindig.</h2>
+      <p style="color:#6d5560">Születésnap, névnap, Valentin-nap vagy csak úgy. Válaszd ki az összeget, mi pedig gyönyörű, nyomtatott vagy digitális utalványt készítünk. 6 hónapig érvényes, bármely szolgáltatásra beváltható.</p>
+      <div class="amounts" id="amounts">
+        <button data-v="10 000 Ft">10 000 Ft</button>
+        <button class="on" data-v="15 000 Ft">15 000 Ft</button>
+        <button data-v="20 000 Ft">20 000 Ft</button>
+        <button data-v="30 000 Ft">30 000 Ft</button>
+      </div>
+      <a href="#foglalas" class="btn btn-rose">Utalványt kérek</a>
+    </div>
+  </div>
+</section>
+
+<section id="velemenyek">
+  <div class="wrap">
+    <div class="center rv"><span class="eyebrow">Vélemények</span><h2 style="margin-top:18px">Amit a vendégeink <em>mondanak</em></h2></div>
+    <div class="rev-grid">
+      <div class="rev rv"><div class="st">★★★★★</div><p>„A gél lakkom 4 hét után is hibátlan volt. Ráadásul a szalon gyönyörű, öröm ott lenni.”</p><div class="who"><span class="av">L</span><span>Lilla M.<small>Google értékelés</small></span></div></div>
+      <div class="rev rv"><div class="st">★★★★★</div><p>„Megmutattam egy Pinterest-képet, és pontosan azt kaptam. Sőt! Végre megtaláltam a körmösömet.”</p><div class="who"><span class="av">Z</span><span>Zsófi K.<small>Google értékelés</small></span></div></div>
+      <div class="rev rv"><div class="st">★★★★★</div><p>„Ajándékutalványt vettem anyukámnak, azóta havonta jár. Kedves, precíz és nagyon tiszta hely.”</p><div class="who"><span class="av">A</span><span>Anna T.<small>Google értékelés</small></span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="foglalas">
+  <div class="wrap book-grid">
+    <div class="rv">
+      <span class="eyebrow">Időpontfoglalás</span>
+      <h2 style="margin:18px 0 18px">Kényeztesd magad <em>— megérdemled.</em></h2>
+      <p style="color:rgba(251,241,238,.7)">Küldd el az időpontkérésedet, és 1 órán belül visszajelzünk. Sürgős esetben hívj minket: <b>+36 1 000 0000</b></p>
+      <ul class="hours" id="hours">
+        <li data-d="1"><span>Hétfő</span><span>10:00 – 19:00</span></li>
+        <li data-d="2"><span>Kedd</span><span>10:00 – 19:00</span></li>
+        <li data-d="3"><span>Szerda</span><span>10:00 – 20:00</span></li>
+        <li data-d="4"><span>Csütörtök</span><span>10:00 – 20:00</span></li>
+        <li data-d="5"><span>Péntek</span><span>9:00 – 18:00</span></li>
+        <li data-d="6"><span>Szombat</span><span>9:00 – 14:00</span></li>
+        <li data-d="0"><span>Vasárnap</span><span>Zárva</span></li>
+      </ul>
+    </div>
+    <div class="rv">
+      <form id="form">
+        <label><span>Szolgáltatás</span><select required><option value="">Válassz…</option><option>Gél lakk</option><option>Műköröm építés</option><option>Töltés</option><option>Klasszikus manikűr</option><option>Spa pedikűr</option><option>Ajándékutalvány</option></select></label>
+        <div class="fr">
+          <label><span>Dátum</span><input type="date" required id="d"></label>
+          <label><span>Időpont</span><input type="time" required value="14:00" step="1800"></label>
+        </div>
+        <div class="fr">
+          <label><span>Név</span><input type="text" required placeholder="Neved"></label>
+          <label><span>Telefon</span><input type="tel" required placeholder="+36 30 123 4567"></label>
+        </div>
+        <label><span>Megjegyzés (pl. inspiráció)</span><input type="text" placeholder="Pl. pasztell francia, rövid forma"></label>
+        <button class="btn" type="submit">Időpont kérése ✦</button>
+      </form>
+      <div class="ok" id="ok"><h3>Köszönjük! 💕</h3><p style="color:rgba(251,241,238,.7)">Hamarosan visszaigazoljuk az időpontodat.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom:0">
+  <div class="wrap center rv"><span class="eyebrow">Instagram</span><h2 style="margin-top:18px">@gyongy.nails</h2></div>
+  <div class="insta">
+    <a href="#"><img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=400&q=70&auto=format&fit=crop" alt=""></a>
+    <a href="#"><img src="https://images.unsplash.com/photo-1600428877878-1a0fd85beda8?w=400&q=70&auto=format&fit=crop" alt=""></a>
+    <a href="#"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=400&q=70&auto=format&fit=crop" alt=""></a>
+    <a href="#"><img src="https://images.unsplash.com/photo-1599948128020-9a44505b0d1b?w=400&q=70&auto=format&fit=crop" alt=""></a>
+    <a href="#"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&q=70&auto=format&fit=crop" alt=""></a>
+    <a href="#"><img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=400&q=70&auto=format&fit=crop" alt=""></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><a href="#" class="logo" style="margin-bottom:14px;color:var(--plum)"><i></i>Gyöngy</a><p>Nail Lounge · Manikűr, gél lakk, műköröm és nail art Budapesten.</p></div>
+      <div><h4>Elérhetőség</h4><p>1137 Budapest,<br>Pozsonyi út 8.</p><a href="tel:+3610000000">+36 1 000 0000</a><a href="mailto:szia@gyongy.pelda.hu">szia@gyongy.pelda.hu</a></div>
+      <div><h4>Kövess</h4><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">TikTok</a></div>
+      <div><iframe loading="lazy" title="Térkép" src="https://maps.google.com/maps?q=Budapest%20Pozsonyi%20%C3%BAt%208&z=15&output=embed"></iframe></div>
+    </div>
+    <p class="copy">© 2026 Gyöngy Nail Lounge · Adatkezelés · Impresszum</p>
+  </div>
+</footer>
+
+<div class="demo-badge">✦ Bemutató weboldal · <a href="../../index.html">Vissza a portfólióhoz</a></div>
+
+<script>
+(()=>{
+  const nav=document.getElementById('nav');
+  document.getElementById('burger').onclick=()=>nav.classList.toggle('open');
+  document.querySelectorAll('#links a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+  // filter
+  document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
+    document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+    document.querySelectorAll('.item').forEach(it=>it.classList.toggle('hide',b.dataset.f!=='all'&&it.dataset.c!==b.dataset.f));
+  });
+
+  // voucher
+  document.querySelectorAll('#amounts button').forEach(b=>b.onclick=()=>{
+    document.querySelectorAll('#amounts button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+    const v=document.getElementById('cardVal');v.style.opacity=0;setTimeout(()=>{v.textContent=b.dataset.v;v.style.opacity=1},200);
+  });
+  document.getElementById('cardVal').style.transition='opacity .2s';
+
+  // today's hours
+  const today=new Date().getDay();document.querySelector(`#hours li[data-d="${today}"]`).classList.add('today');
+
+  // form
+  const d=document.getElementById('d');const t=new Date();t.setDate(t.getDate()+1);d.value=t.toISOString().slice(0,10);d.min=new Date().toISOString().slice(0,10);
+  document.getElementById('form').onsubmit=e=>{e.preventDefault();e.target.style.display='none';document.getElementById('ok').style.display='block'};
+})();
+</script>
+</body>
+</html>

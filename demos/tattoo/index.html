@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fekete Tinta Tattoo — Tetoválószalon Budapest</title>
+<meta name="description" content="Egyedi tetoválások Budapesten: blackwork, fineline, realisztikus és japán stílus. Kérj ingyenes konzultációt online!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Pirata+One&family=Inter:wght@300;400;500;600&display=swap&subset=latin-ext" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230b0b0b'/><path d='M16 4 C10 14 10 20 16 28 C22 20 22 14 16 4Z' fill='%23e0283f'/></svg>">
+<style>
+:root{--bg:#0a0a0a;--bg-2:#111;--line:rgba(232,226,214,.12);--bone:#e8e2d6;--muted:#8a857c;--red:#e0283f;--display:"Anton",Impact,sans-serif;--goth:"Pirata One",serif;--sans:"Inter",system-ui,sans-serif;--ease:cubic-bezier(.2,.7,.1,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--bg);color:var(--bone);font-family:var(--sans);font-size:16px;line-height:1.7;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.95;letter-spacing:.005em}
+h2{font-size:clamp(2.8rem,7vw,6rem)}
+h2 .r,h1 .r{color:var(--red)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+.tag{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--red);font-weight:600;display:flex;align-items:center;gap:12px}
+.tag::before{content:"";width:8px;height:8px;background:var(--red);transform:rotate(45deg)}
+.btn{display:inline-flex;align-items:center;gap:.8em;padding:1.1em 2em;font-family:var(--sans);font-weight:600;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;border:1px solid var(--bone);background:transparent;color:var(--bone);transition:all .35s var(--ease);position:relative;overflow:hidden}
+.btn-red{background:var(--red);border-color:var(--red);color:#fff}
+.btn-red:hover{background:#fff;color:#000;border-color:#fff}
+.btn:not(.btn-red):hover{background:var(--bone);color:#000}
+section{padding:clamp(80px,11vw,150px) 0;position:relative}
+
+/* nav */
+nav{position:fixed;inset:0 0 auto;z-index:50;padding:22px 0;transition:all .4s;mix-blend-mode:normal}
+nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(10px);padding:14px 0;border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:var(--goth);font-size:2rem;line-height:1}
+.logo span{color:var(--red)}
+.nl{display:flex;gap:34px;align-items:center;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+.nl a:not(.btn){color:var(--muted);transition:color .25s}
+.nl a:not(.btn):hover{color:var(--bone)}
+.nl .btn{padding:.85em 1.4em}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--bone);padding:.6em 1em;font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}
+
+/* hero */
+.hero{height:100vh;min-height:640px;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url("https://images.unsplash.com/photo-1475695752828-6d2b0a83cf8a?w=1800&q=80&auto=format&fit=crop") center 30%/cover;filter:grayscale(1) contrast(1.15) brightness(.6);transform:scale(1.15);animation:zoom 2.4s var(--ease) forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--bg) 2%,transparent 55%),linear-gradient(90deg,rgba(10,10,10,.85),transparent 70%);z-index:1}
+.hero-inner{position:relative;z-index:2;padding-bottom:clamp(50px,8vh,90px);width:100%}
+.hero h1{font-size:clamp(4.2rem,15vw,15rem);line-height:.82;margin:24px 0 30px}
+.hero h1 span{display:block;overflow:hidden}
+.hero h1 span i{display:block;font-style:normal;transform:translateY(105%);animation:lift 1.2s var(--ease) forwards}
+.hero h1 span:nth-child(2) i{animation-delay:.15s}
+@keyframes lift{to{transform:none}}
+.hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.hero-row p{max-width:420px;color:#bdb7ac}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.vert{position:absolute;right:clamp(16px,3vw,40px);top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:right center;z-index:2;font-size:.7rem;letter-spacing:.4em;color:var(--muted);text-transform:uppercase;white-space:nowrap}
+
+/* stats bar */
+.bar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr)}
+.bar div{padding:34px clamp(16px,3vw,40px);border-right:1px solid var(--line)}
+.bar div:last-child{border-right:0}
+.bar strong{font-family:var(--display);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:400;display:block;line-height:1}
+.bar span{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* styles list */
+.styles-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.style-list{list-style:none;border-top:1px solid var(--line);margin-top:40px}
+.style-list li{border-bottom:1px solid var(--line);padding:22px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:padding .4s var(--ease),color .3s}
+.style-list li h3{font-size:clamp(1.8rem,3.4vw,2.8rem);transition:color .3s}
+.style-list li small{font-size:.8rem;color:var(--muted);max-width:220px;text-align:right}
+.style-list li.on,.style-list li:hover{padding-left:20px}
+.style-list li.on h3{color:var(--red)}
+.style-img{aspect-ratio:4/5;position:relative;overflow:hidden;background:var(--bg-2)}
+.style-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity .7s,transform 1.2s var(--ease);filter:grayscale(.3) contrast(1.1)}
+.style-img img.on{opacity:1;transform:none}
+.style-img::after{content:"";position:absolute;inset:14px;border:1px solid rgba(232,226,214,.3);pointer-events:none}
+
+/* artists */
+.artists{background:var(--bg-2)}
+.a-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:60px}
+.a-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.artist{position:relative;overflow:hidden;aspect-ratio:3/4.2;cursor:pointer}
+.artist img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);transition:transform 1.2s var(--ease),filter .6s}
+.artist:hover img{transform:scale(1.07);filter:grayscale(0)}
+.artist::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.92) 10%,transparent 60%)}
+.artist .info{position:absolute;left:24px;right:24px;bottom:24px;z-index:2}
+.artist h3{font-size:2.2rem}
+.artist .sp{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:600}
+.artist p{font-size:.88rem;color:#bdb7ac;max-height:0;opacity:0;overflow:hidden;transition:all .6s var(--ease)}
+.artist:hover p{max-height:120px;opacity:1;margin-top:8px}
+.artist .ig{display:inline-block;margin-top:10px;font-size:.78rem;border-bottom:1px solid var(--red)}
+
+/* portfolio */
+.p-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:50px}
+.pf{display:flex;gap:6px;flex-wrap:wrap}
+.pf button{background:transparent;border:1px solid var(--line);color:var(--muted);padding:.7em 1.2em;font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.pf button.on,.pf button:hover{border-color:var(--red);color:var(--bone)}
+.pf button.on{background:var(--red);color:#fff}
+.masonry{columns:3;column-gap:16px}
+.masonry figure{break-inside:avoid;margin-bottom:16px;position:relative;overflow:hidden}
+.masonry img{width:100%;filter:grayscale(.4);transition:filter .5s,transform 1s var(--ease)}
+.masonry figure:hover img{filter:grayscale(0);transform:scale(1.04)}
+.masonry figcaption{position:absolute;left:0;bottom:0;right:0;padding:16px;background:linear-gradient(0deg,rgba(0,0,0,.85),transparent);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;transform:translateY(100%);transition:transform .45s var(--ease)}
+.masonry figure:hover figcaption{transform:none}
+.masonry figure.hide{display:none}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:60px}
+.step{padding:40px 30px 10px 0;border-right:1px solid var(--line);padding-left:30px}
+.step:first-child{padding-left:0}.step:last-child{border-right:0}
+.step b{font-family:var(--display);font-size:4rem;color:transparent;-webkit-text-stroke:1px var(--red);font-weight:400;line-height:1}
+.step h3{font-size:1.6rem;margin:18px 0 10px}
+.step p{color:var(--muted);font-size:.92rem}
+
+/* aftercare + faq */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px)}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font-weight:500;font-size:1.02rem;position:relative}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);color:var(--red);font-size:1.6rem;font-weight:300;transition:transform .3s}
+.acc details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.acc details p,.acc details ul{color:var(--muted);padding:0 40px 22px 0;font-size:.93rem}
+.acc details ul{padding-left:18px}
+.acc details li{margin-bottom:6px}
+.acc h3{font-size:2.6rem;margin:16px 0 26px}
+
+/* consult */
+.consult{background:var(--red);color:#fff;overflow:hidden}
+.consult::before{content:"TINTA";position:absolute;font-family:var(--display);font-size:38vw;line-height:.8;color:rgba(0,0,0,.08);bottom:-6vw;right:-3vw;pointer-events:none}
+.c-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;position:relative}
+.consult .tag{color:#fff}.consult .tag::before{background:#fff}
+.consult h2{margin:20px 0 24px}
+.consult .lead{color:rgba(255,255,255,.85);max-width:420px}
+.consult ul.c-info{list-style:none;margin-top:36px;display:grid;gap:12px;font-size:.95rem}
+form{background:var(--bg);color:var(--bone);padding:clamp(24px,4vw,44px);display:grid;gap:18px;box-shadow:20px 20px 0 rgba(0,0,0,.25)}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form label>span{display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+form input,form select,form textarea{width:100%;background:var(--bg-2);border:1px solid var(--line);color:var(--bone);padding:13px 14px;font-family:var(--sans);font-size:.95rem;transition:border-color .3s;resize:vertical;border-radius:0}
+form select option{background:var(--bg)}
+form input:focus,form select:focus,form textarea:focus{outline:none;border-color:var(--red)}
+form ::placeholder{color:#4d4a45}
+.drop{border:1px dashed rgba(232,226,214,.3);padding:22px;text-align:center;cursor:pointer;transition:border-color .3s,background .3s;font-size:.88rem;color:var(--muted);display:block}
+.drop:hover{border-color:var(--red);background:rgba(224,40,63,.05)}
+.drop input{display:none}
+.drop b{color:var(--bone);font-weight:500}
+.sizes{display:flex;gap:6px;flex-wrap:wrap}
+.sizes input{display:none}
+.sizes label{border:1px solid var(--line);padding:.6em 1em;font-size:.82rem;cursor:pointer;transition:all .25s}
+.sizes input:checked+label{background:var(--bone);color:#000;border-color:var(--bone)}
+form .btn{justify-content:center}
+.done{display:none;background:var(--bg);padding:60px 30px;text-align:center}
+.done h3{font-size:3rem;margin-bottom:10px}
+.done p{color:var(--muted)}
+
+/* footer */
+footer{padding:80px 0 30px}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr;gap:40px}
+footer h4{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--red);margin-bottom:14px;font-weight:600}
+footer p,footer a{display:block;color:var(--muted);font-size:.92rem}
+footer a:hover{color:var(--bone)}
+footer .logo{font-size:2.6rem;margin-bottom:14px;display:block;color:var(--bone)}
+footer iframe{width:100%;height:190px;border:0;filter:grayscale(1) invert(.92) contrast(.9)}
+.copy{border-top:1px solid var(--line);margin-top:60px;padding-top:24px;font-size:.78rem;color:#5d5953;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.age{font-size:.78rem;color:var(--muted);margin-top:12px}
+
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.demo-badge{position:fixed;left:16px;bottom:16px;z-index:90;background:var(--bone);color:#000;font-size:.75rem;padding:.7em 1.1em;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.demo-badge a{text-decoration:underline;text-underline-offset:3px}
+.in-frame .demo-badge{display:none}
+.in-frame .rv{opacity:1;transform:none;transition:none}
+
+@media (max-width:960px){
+  .styles-wrap,.two,.c-grid{grid-template-columns:1fr}
+  .a-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .step:nth-child(2){border-right:0}
+  .step:nth-child(3){padding-left:0}
+  .bar{grid-template-columns:1fr 1fr}
+  .bar div:nth-child(2){border-right:0}
+  .bar div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .masonry{columns:2}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .style-img{aspect-ratio:4/3;order:-1}
+}
+@media (max-width:760px){
+  .nl{position:fixed;inset:0;background:var(--bg);flex-direction:column;justify-content:center;font-size:1.1rem;opacity:0;pointer-events:none;transition:opacity .4s}
+  nav.open .nl{opacity:1;pointer-events:auto}
+  .burger{display:block;position:relative;z-index:2}
+  .logo{position:relative;z-index:2}
+  .a-grid,.steps,.fr,.f-grid{grid-template-columns:1fr}
+  .step{border-right:0;padding-left:0;border-bottom:1px solid var(--line);padding-bottom:30px}
+  .vert{display:none}
+  .artist p{max-height:none;opacity:1;margin-top:8px}
+  .artist img{filter:grayscale(.3)}
+  .style-list li small{display:none}
+}
+</style>
+</head>
+<body>
+<script>if(window.self!==window.top)document.documentElement.classList.add('in-frame')</script>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="#" class="logo">Fekete <span>Tinta</span></a>
+    <div class="nl" id="nl">
+      <a href="#stilusok">Stílusok</a>
+      <a href="#artistok">Artistok</a>
+      <a href="#portfolio">Portfólió</a>
+      <a href="#utogondozas">Utógondozás</a>
+      <a href="#konzultacio" class="btn btn-red">Konzultáció</a>
+    </div>
+    <button class="burger" id="burger">Menü</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <span class="vert">Est. 2016 — Budapest VIII.</span>
+  <div class="wrap hero-inner">
+    <span class="tag">Tattoo stúdió · Budapest</span>
+    <h1><span><i>Fekete</i></span><span><i class="r">Tinta.</i></span></h1>
+    <div class="hero-row">
+      <p>Egyedi tetoválások, amelyek egy életen át veled maradnak. Minden mintát a semmiből tervezünk — kizárólag neked.</p>
+      <div class="hero-btns">
+        <a href="#konzultacio" class="btn btn-red">Ingyenes konzultáció →</a>
+        <a href="#portfolio" class="btn">Portfólió</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="rv"><strong>9+</strong><span>év a szakmában</span></div>
+  <div class="rv"><strong>3</strong><span>rezidens artist</span></div>
+  <div class="rv"><strong>4000+</strong><span>elkészült tetoválás</span></div>
+  <div class="rv"><strong>100%</strong><span>steril, egyszer használatos</span></div>
+</div>
+
+<section id="stilusok">
+  <div class="wrap styles-wrap">
+    <div class="rv">
+      <span class="tag">Stílusok</span>
+      <h2 style="margin-top:20px">Mit <span class="r">varrunk?</span></h2>
+      <ul class="style-list" id="styleList">
+        <li class="on" data-i="0"><h3>Blackwork</h3><small>Erős, tömör fekete felületek, grafikus formák</small></li>
+        <li data-i="1"><h3>Fineline</h3><small>Finom vonalak, apró, elegáns minták</small></li>
+        <li data-i="2"><h3>Realisztikus</h3><small>Portrék, fotórealisztikus árnyékolás</small></li>
+        <li data-i="3"><h3>Japán</h3><small>Irezumi, koi, sárkányok, nagy kompozíciók</small></li>
+      </ul>
+    </div>
+    <div class="style-img rv" id="styleImg">
+      <img class="on" src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?w=900&q=80&auto=format&fit=crop" alt="Blackwork tetoválás">
+      <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=900&q=80&auto=format&fit=crop" alt="Fineline tetoválás">
+      <img src="https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?w=900&q=80&auto=format&fit=crop" alt="Realisztikus tetoválás">
+      <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=900&q=80&auto=format&fit=crop" alt="Japán stílusú tetoválás">
+    </div>
+  </div>
+</section>
+
+<section class="artists" id="artistok">
+  <div class="wrap">
+    <div class="a-head rv"><div><span class="tag">Artistok</span><h2 style="margin-top:20px">A <span class="r">kezek</span><br>a tű mögött</h2></div><p style="max-width:360px;color:var(--muted)">Mindhárom artistunk saját stílussal rendelkezik. Válaszd azt, akinek a munkái a legközelebb állnak hozzád.</p></div>
+    <div class="a-grid">
+      <div class="artist rv"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=700&q=80&auto=format&fit=crop" alt="Márk munka közben"><div class="info"><span class="sp">Blackwork · Japán</span><h3>Márk „Ink” Fekete</h3><p>A stúdió alapítója. 12 év tapasztalat, nagy kompozíciók és teljes ujjak specialistája.</p><a href="#" class="ig">@mark.feketetinta</a></div></div>
+      <div class="artist rv"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=700&q=80&auto=format&fit=crop" alt="Lili munkája"><div class="info"><span class="sp">Fineline · Botanikus</span><h3>Lili Varga</h3><p>Finom vonalak, virágok és minimalista minták. Az első tetoválásodhoz tökéletes választás.</p><a href="#" class="ig">@lili.fineline</a></div></div>
+      <div class="artist rv"><img src="https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?w=700&q=80&auto=format&fit=crop" alt="Dávid munka közben"><div class="info"><span class="sp">Realisztikus · Portré</span><h3>Dávid Kocsis</h3><p>Fotórealisztikus portrék és fekete-szürke árnyékolás, megdöbbentő részletességgel.</p><a href="#" class="ig">@david.realink</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="wrap">
+    <div class="p-head rv">
+      <div><span class="tag">Portfólió</span><h2 style="margin-top:20px">Friss <span class="r">munkák</span></h2></div>
+      <div class="pf" id="pf">
+        <button class="on" data-f="all">Összes</button>
+        <button data-f="black">Blackwork</button>
+        <button data-f="fine">Fineline</button>
+        <button data-f="real">Realisztikus</button>
+        <button data-f="jap">Japán</button>
+      </div>
+    </div>
+    <div class="masonry rv" id="masonry">
+      <figure data-c="black"><img src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?w=700&q=75&auto=format&fit=crop" alt=""><figcaption>Bazsarózsa · Márk</figcaption></figure>
+      <figure data-c="jap"><img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=700&h=900&q=75&auto=format&fit=crop" alt=""><figcaption>Japán hát · Márk</figcaption></figure>
+      <figure data-c="fine"><img src="https://images.unsplash.com/photo-1542727365-19732a80dcfd?w=700&h=500&q=75&auto=format&fit=crop" alt=""><figcaption>Kézírás + ág · Lili</figcaption></figure>
+      <figure data-c="real"><img src="https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?w=700&h=800&q=75&auto=format&fit=crop" alt=""><figcaption>Fekete-szürke ujj · Dávid</figcaption></figure>
+      <figure data-c="black"><img src="https://images.unsplash.com/photo-1604374376934-2df6fad6519b?w=700&h=500&q=75&auto=format&fit=crop" alt=""><figcaption>Teljes ujj · Márk</figcaption></figure>
+      <figure data-c="fine"><img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=700&h=900&q=75&auto=format&fit=crop" alt=""><figcaption>Botanikus váll · Lili</figcaption></figure>
+      <figure data-c="real"><img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=700&h=600&q=75&auto=format&fit=crop" alt=""><figcaption>Folyamatban · Dávid</figcaption></figure>
+      <figure data-c="black"><img src="https://images.unsplash.com/photo-1475695752828-6d2b0a83cf8a?w=700&h=800&q=75&auto=format&fit=crop" alt=""><figcaption>Kéz &amp; ujjak · Márk</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="rv"><span class="tag">Folyamat</span><h2 style="margin-top:20px">Ötlettől a <span class="r">bőrig</span></h2></div>
+    <div class="steps">
+      <div class="step rv"><b>01</b><h3>Konzultáció</h3><p>Töltsd ki az űrlapot vagy gyere be. Megbeszéljük az ötletet, a méretet és a helyet — ingyenesen.</p></div>
+      <div class="step rv"><b>02</b><h3>Tervezés</h3><p>Az artist egyedi mintát rajzol neked. Addig módosítunk rajta, amíg tökéletes nem lesz.</p></div>
+      <div class="step rv"><b>03</b><h3>Tetoválás</h3><p>Steril környezetben, prémium festékekkel, nyugodt tempóban dolgozunk.</p></div>
+      <div class="step rv"><b>04</b><h3>Utógondozás</h3><p>Részletes útmutatót adunk, és ingyenes javítást biztosítunk, ha szükséges.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="utogondozas">
+  <div class="wrap two">
+    <div class="acc rv">
+      <span class="tag">Utógondozás</span>
+      <h3>Hogy évtizedekig szép maradjon</h3>
+      <details open><summary>Első 24 óra</summary><ul><li>A fóliát 2–4 óra után távolítsd el (second skin esetén 3–5 nap).</li><li>Langyos vízzel és illatmentes szappannal finoman mosd le.</li><li>Papírtörlővel itasd szárazra — ne dörzsöld!</li></ul></details>
+      <details><summary>Az első 2 hét</summary><ul><li>Naponta 2–3× vékonyan kend be a javasolt krémmel.</li><li>Ne vakard, ne húzd le a pörköt.</li><li>Kerüld a fürdőkádat, uszodát, szaunát és a szoláriumot.</li></ul></details>
+      <details><summary>Hosszú távon</summary><p>Használj magas faktorszámú naptejet a tetovált területen. A nap a legnagyobb ellensége a tetoválás színeinek és éles vonalainak.</p></details>
+      <details><summary>Mikor keress minket?</summary><p>Ha erős bőrpírt, duzzanatot vagy szokatlan fájdalmat tapasztalsz, írj vagy hívj minket azonnal — és szükség esetén fordulj orvoshoz.</p></details>
+    </div>
+    <div class="acc rv">
+      <span class="tag">GYIK</span>
+      <h3>Gyakori kérdések</h3>
+      <details><summary>Mennyibe kerül egy tetoválás?</summary><p>Az ár a mérettől, a részletességtől és a helytől függ. A minimum ár 25 000 Ft, nagyobb munkáknál óradíjjal számolunk. Pontos árajánlatot a konzultáción adunk.</p></details>
+      <details><summary>Kell foglaló?</summary><p>Igen, az időpont rögzítéséhez 15 000 Ft foglalót kérünk, ami a végösszegbe beszámít.</p></details>
+      <details><summary>Fáj?</summary><p>Mindenkinek másképp — és a testrész is sokat számít. Az artistunk végig figyel rád, és bármikor tarthatunk szünetet.</p></details>
+      <details><summary>Hány éves kortól lehet?</summary><p>Kizárólag 18 éven felülieket tetoválunk, személyi igazolvány bemutatásával.</p></details>
+      <details><summary>Javítotok / takartok régi tetoválást?</summary><p>Igen, cover-up és javítás is van. Hozz róla fotót a konzultációra!</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="consult" id="konzultacio">
+  <div class="wrap c-grid">
+    <div class="rv">
+      <span class="tag">Konzultáció</span>
+      <h2>Mondd el<br>az ötleted.</h2>
+      <p class="lead">Írd le, mit szeretnél, csatolj referenciaképet, és 48 órán belül jelentkezünk egy árajánlattal és szabad időpontokkal.</p>
+      <ul class="c-info">
+        <li>📍 1085 Budapest, Baross utca 21.</li>
+        <li>📞 +36 1 000 0000</li>
+        <li>🕐 K–Szo: 12:00–20:00 · csak előzetes egyeztetéssel</li>
+      </ul>
+    </div>
+    <div class="rv">
+      <form id="form">
+        <div class="fr">
+          <label><span>Név</span><input type="text" required placeholder="Teljes név"></label>
+          <label><span>E-mail / telefon</span><input type="text" required placeholder="Elérhetőség"></label>
+        </div>
+        <div class="fr">
+          <label><span>Stílus</span><select><option>Még nem tudom</option><option>Blackwork</option><option>Fineline</option><option>Realisztikus</option><option>Japán</option><option>Cover-up</option></select></label>
+          <label><span>Artist</span><select><option>Bárki</option><option>Márk</option><option>Lili</option><option>Dávid</option></select></label>
+        </div>
+        <div><span style="display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Méret</span>
+          <div class="sizes">
+            <input type="radio" name="s" id="s1"><label for="s1">Apró (&lt;5 cm)</label>
+            <input type="radio" name="s" id="s2" checked><label for="s2">Közepes (5–15 cm)</label>
+            <input type="radio" name="s" id="s3"><label for="s3">Nagy (15 cm+)</label>
+            <input type="radio" name="s" id="s4"><label for="s4">Ujj / hát</label>
+          </div>
+        </div>
+        <label><span>Testrész</span><input type="text" placeholder="Pl. alkar belső oldala"></label>
+        <label><span>Ötlet leírása</span><textarea rows="3" required placeholder="Írd le, mit képzelsz el…"></textarea></label>
+        <label class="drop" id="drop"><input type="file" accept="image/*" multiple id="file"><b>Referenciakép feltöltése</b><br><span id="fname">Kattints vagy húzd ide (max. 5 kép)</span></label>
+        <button class="btn btn-red" type="submit">Konzultáció kérése →</button>
+      </form>
+      <div class="done" id="done"><h3>Megkaptuk!</h3><p>48 órán belül jelentkezünk az árajánlattal.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div><a href="#" class="logo">Fekete <span style="color:var(--red)">Tinta</span></a><p>Egyedi tetoválások Budapest szívében, 2016 óta.</p><p class="age">Csak 18 éven felülieknek.</p></div>
+      <div><h4>Stúdió</h4><p>1085 Budapest,<br>Baross utca 21.</p><a href="tel:+3610000000">+36 1 000 0000</a><a href="mailto:ink@feketetinta.pelda.hu">ink@feketetinta.pelda.hu</a></div>
+      <div><h4>Nyitvatartás</h4><p>Hétfő: zárva<br>K–Szo: 12–20<br>Vasárnap: zárva</p></div>
+      <div><iframe loading="lazy" title="Térkép" src="https://maps.google.com/maps?q=Budapest%20Baross%20utca%2021&z=15&output=embed"></iframe></div>
+    </div>
+    <div class="copy"><span>© 2026 Fekete Tinta Tattoo</span><span>Adatkezelés · Impresszum</span></div>
+  </div>
+</footer>
+
+<div class="demo-badge">✦ Bemutató weboldal · <a href="../../index.html">Vissza a portfólióhoz</a></div>
+
+<script>
+(()=>{
+  const nav=document.getElementById('nav');
+  const s=()=>nav.classList.toggle('scrolled',scrollY>40);s();addEventListener('scroll',s,{passive:true});
+  document.getElementById('burger').onclick=()=>nav.classList.toggle('open');
+  document.querySelectorAll('#nl a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+  // style list hover
+  const items=[...document.querySelectorAll('#styleList li')],imgs=[...document.querySelectorAll('#styleImg img')];
+  const pick=i=>{items.forEach((x,j)=>x.classList.toggle('on',j===i));imgs.forEach((x,j)=>x.classList.toggle('on',j===i))};
+  items.forEach((li,i)=>{li.onmouseenter=()=>pick(i);li.onclick=()=>pick(i)});
+
+  // portfolio filter
+  document.querySelectorAll('#pf button').forEach(b=>b.onclick=()=>{
+    document.querySelectorAll('#pf button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+    document.querySelectorAll('#masonry figure').forEach(f=>f.classList.toggle('hide',b.dataset.f!=='all'&&f.dataset.c!==b.dataset.f));
+  });
+
+  // file upload label
+  const file=document.getElementById('file'),fname=document.getElementById('fname'),drop=document.getElementById('drop');
+  file.onchange=()=>{fname.textContent=file.files.length?[...file.files].map(f=>f.name).join(', '):'Kattints vagy húzd ide (max. 5 kép)'};
+  ['dragover','dragenter'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.style.borderColor='var(--red)'}));
+  drop.addEventListener('dragleave',()=>drop.style.borderColor='');
+  drop.addEventListener('drop',e=>{e.preventDefault();drop.style.borderColor='';file.files=e.dataTransfer.files;file.onchange()});
+
+  document.getElementById('form').onsubmit=e=>{e.preventDefault();e.target.style.display='none';document.getElementById('done').style.display='block'};
+})();
+</script>
+</body>
+</html>

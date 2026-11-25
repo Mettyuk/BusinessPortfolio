@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova — Weboldalak helyi vállalkozásoknak</title>
+  <meta name="description" content="Modern, mobilbarát weboldalak fodrászatoknak, körömszalonoknak, tetoválószalonoknak és más helyi vállalkozásoknak — gyorsan, egyszerűen, gond nélkül.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&display=swap&subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23111'/><circle cx='16' cy='16' r='7' fill='%23c8f169'/></svg>">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#top" class="logo"><span class="logo-dot"></span>nova<span class="logo-tag">web studio</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#munkaink">Munkáink</a>
+      <a href="#miert">Miért weboldal?</a>
+      <a href="#mit-kapsz">Mit kapsz</a>
+      <a href="#folyamat">Folyamat</a>
+      <a href="#gyik">GYIK</a>
+      <a href="#kapcsolat" class="btn btn-small btn-light">Ingyenes konzultáció</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menü"><span></span><span></span></button>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="hero-inner">
+        <p class="eyebrow reveal"><span class="pulse"></span> Jelenleg új ügyfeleket fogadunk</p>
+        <h1 class="hero-title reveal">
+          Weboldal, ami<br>
+          <em>ügyfeleket</em> hoz<br>
+          — nem csak <span class="strike">szép</span>.
+        </h1>
+        <p class="hero-sub reveal">Modern, mobilbarát weboldalakat készítünk fodrászatoknak, körömszalonoknak, tetoválószalonoknak és más helyi vállalkozásoknak. Napok alatt, nem hónapok alatt — és neked semmi dolgod vele.</p>
+        <div class="hero-cta reveal">
+          <a href="#munkaink" class="btn btn-primary">Nézd meg a munkáinkat <span class="arrow">→</span></a>
+          <a href="#kapcsolat" class="btn btn-ghost">Beszéljünk</a>
+        </div>
+        <div class="hero-stats reveal">
+          <div><strong data-count="7">0</strong><span>nap alatt<br>elkészül</span></div>
+          <div><strong data-count="100" data-suffix="%">0</strong><span>mobilbarát<br>kialakítás</span></div>
+          <div><strong>24/7</strong><span>elérhető az<br>ügyfeleidnek</span></div>
+        </div>
+      </div>
+
+      <div class="hero-stack" aria-hidden="true">
+        <div class="stack-card sc-1"><img src="https://images.unsplash.com/photo-1475695752828-6d2b0a83cf8a?w=700&q=75&auto=format&fit=crop" alt=""><span>Tetoválószalon</span></div>
+        <div class="stack-card sc-2"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=700&q=75&auto=format&fit=crop" alt=""><span>Körömszalon</span></div>
+        <div class="stack-card sc-3"><img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=700&q=75&auto=format&fit=crop" alt=""><span>Fodrászat</span></div>
+      </div>
+
+      <a href="#munkaink" class="scroll-hint" aria-label="Görgess lejjebb"><span></span></a>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Fodrászat</span><i>✦</i><span>Körömszalon</span><i>✦</i><span>Tetoválószalon</span><i>✦</i><span>Kozmetika</span><i>✦</i><span>Barber shop</span><i>✦</i><span>Masszázs</span><i>✦</i><span>Szempilla stúdió</span><i>✦</i><span>Edzőterem</span><i>✦</i>
+        <span>Fodrászat</span><i>✦</i><span>Körömszalon</span><i>✦</i><span>Tetoválószalon</span><i>✦</i><span>Kozmetika</span><i>✦</i><span>Barber shop</span><i>✦</i><span>Masszázs</span><i>✦</i><span>Szempilla stúdió</span><i>✦</i><span>Edzőterem</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- SHOWCASE -->
+    <section class="section" id="munkaink">
+      <div class="section-head reveal">
+        <p class="kicker">01 — Munkáink</p>
+        <h2>Három szalon. Három teljesen<br><em>különböző</em> stílus.</h2>
+        <p class="lead">Ezek nem képernyőképek — működő weboldalak. Kattints bele, görgess, próbáld ki telefonon. Pontosan ilyet kaphat a te vállalkozásod is, a saját arculatodra szabva.</p>
+      </div>
+
+      <!-- Project 1 -->
+      <article class="project reveal" style="--accent:#a07a52; --accent-soft:#f1e8dc">
+        <div class="project-visual">
+          <div class="device-laptop" data-src="demos/hair/index.html">
+            <div class="laptop-screen"><div class="screen-viewport"><iframe title="Aurélia Hair Studio demó" loading="lazy" tabindex="-1"></iframe></div></div>
+            <div class="laptop-base"></div>
+          </div>
+          <div class="device-phone" data-src="demos/hair/index.html">
+            <div class="phone-notch"></div>
+            <div class="screen-viewport"><iframe title="Aurélia Hair Studio mobil demó" loading="lazy" tabindex="-1"></iframe></div>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-num">01</span>
+          <p class="project-type">Fodrászat · Elegáns, magazinos stílus</p>
+          <h3>Aurélia Hair Studio</h3>
+          <p>Letisztult, prémium megjelenés krémszínekkel és klasszikus betűkkel. A látogató egy pillantás alatt látja a szolgáltatásokat és az árakat, megismeri a fodrászokat, és pár kattintással időpontot foglal.</p>
+          <ul class="tags">
+            <li>Online időpontfoglalás</li><li>Árlista kategóriákkal</li><li>Csapat bemutatása</li><li>Galéria</li><li>Vélemények</li><li>Térkép &amp; nyitvatartás</li>
+          </ul>
+          <a href="demos/hair/index.html" target="_blank" class="btn btn-primary">Élő demó megnyitása <span class="arrow">↗</span></a>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project project-rev reveal" style="--accent:#d48a8a; --accent-soft:#fbeeee">
+        <div class="project-visual">
+          <div class="device-laptop" data-src="demos/nails/index.html">
+            <div class="laptop-screen"><div class="screen-viewport"><iframe title="Gyöngy Nail Lounge demó" loading="lazy" tabindex="-1"></iframe></div></div>
+            <div class="laptop-base"></div>
+          </div>
+          <div class="device-phone" data-src="demos/nails/index.html">
+            <div class="phone-notch"></div>
+            <div class="screen-viewport"><iframe title="Gyöngy Nail Lounge mobil demó" loading="lazy" tabindex="-1"></iframe></div>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-num">02</span>
+          <p class="project-type">Körömszalon · Lágy, nőies, luxus hangulat</p>
+          <h3>Gyöngy Nail Lounge</h3>
+          <p>Púderrózsaszín és arany tónusok, kerekített formák, finom animációk. A szűrhető galéria megmutatja a munkákat, az ajándékutalvány-szekció pedig plusz bevételt hoz — különösen ünnepek előtt.</p>
+          <ul class="tags">
+            <li>Szűrhető galéria</li><li>Szolgáltatás-menü</li><li>Ajándékutalvány</li><li>Instagram-hangulat</li><li>Időpontfoglalás</li><li>Vélemények</li>
+          </ul>
+          <a href="demos/nails/index.html" target="_blank" class="btn btn-primary">Élő demó megnyitása <span class="arrow">↗</span></a>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project reveal" style="--accent:#e0283f; --accent-soft:#2a1013">
+        <div class="project-visual">
+          <div class="device-laptop" data-src="demos/tattoo/index.html">
+            <div class="laptop-screen"><div class="screen-viewport"><iframe title="Fekete Tinta Tattoo demó" loading="lazy" tabindex="-1"></iframe></div></div>
+            <div class="laptop-base"></div>
+          </div>
+          <div class="device-phone" data-src="demos/tattoo/index.html">
+            <div class="phone-notch"></div>
+            <div class="screen-viewport"><iframe title="Fekete Tinta Tattoo mobil demó" loading="lazy" tabindex="-1"></iframe></div>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-num">03</span>
+          <p class="project-type">Tetoválószalon · Sötét, merész, karakteres</p>
+          <h3>Fekete Tinta Tattoo</h3>
+          <p>Sötét, nagy hatású dizájn, ami illik a műfajhoz. Az artistok saját profilt kapnak, a portfólió stílus szerint szűrhető, a konzultációs űrlapon pedig referenciaképet is fel lehet tölteni. Az utógondozási útmutató rengeteg telefonhívást spórol meg.</p>
+          <ul class="tags">
+            <li>Artist profilok</li><li>Portfólió stílusok szerint</li><li>Konzultáció kérése</li><li>Képfeltöltés</li><li>Utógondozás</li><li>GYIK</li>
+          </ul>
+          <a href="demos/tattoo/index.html" target="_blank" class="btn btn-primary">Élő demó megnyitása <span class="arrow">↗</span></a>
+        </div>
+      </article>
+
+      <p class="showcase-note reveal">Tipp: vidd az egeret a laptop képernyője fölé — a weboldal magától végiggörget.</p>
+    </section>
+
+    <!-- WHY -->
+    <section class="section section-dark" id="miert">
+      <div class="section-head reveal">
+        <p class="kicker">02 — Miért weboldal?</p>
+        <h2>A Facebook-oldal jó kezdet.<br><em>De nem elég.</em></h2>
+        <p class="lead">Az új ügyfelek ma a Google-ben keresnek: „fodrász a közelemben”, „körömszalon Budapest”. Ha nincs weboldalad, ilyenkor a konkurenciát találják meg — nem téged.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+          <h4>Megtalálnak a Google-ben</h4>
+          <p>Egy jól felépített weboldal segít, hogy feljebb kerülj a keresési találatok között és a Google Térképen is.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+          <h4>Foglalnak, amíg alszol</h4>
+          <p>Az időpontkérés éjjel 11-kor is működik. Kevesebb telefon munka közben, több foglalás.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h4>Bizalmat épít</h4>
+          <p>Egy igényes oldal azt üzeni: ez egy komoly, profi hely. Az ügyfél már azelőtt meggyőződik, hogy belépne az ajtón.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg></div>
+          <h4>A tiéd, nem egy algoritmusé</h4>
+          <p>A közösségi médiában az algoritmus dönti el, ki lát. A saját weboldalad mindig ott van, és te irányítod.</p>
+        </div>
+      </div>
+
+      <div class="compare reveal">
+        <div class="compare-col">
+          <h4>Csak Facebook / Instagram</h4>
+          <ul>
+            <li class="no">Nehezen található a Google-ben</li>
+            <li class="no">Az árak és infók elvesznek a posztok között</li>
+            <li class="no">Időpont csak üzenetben vagy telefonon</li>
+            <li class="no">Az algoritmus dönti el, ki lát</li>
+            <li class="no">Ugyanúgy néz ki, mint mindenki másé</li>
+          </ul>
+        </div>
+        <div class="compare-col compare-win">
+          <span class="badge">Ajánlott</span>
+          <h4>Saját weboldal + közösségi média</h4>
+          <ul>
+            <li class="yes">Megjelensz a helyi keresésekben</li>
+            <li class="yes">Árlista, nyitvatartás, térkép egy helyen</li>
+            <li class="yes">Online időpontkérés 0–24-ben</li>
+            <li class="yes">Te irányítod, mit látnak az ügyfelek</li>
+            <li class="yes">Egyedi, a szalonod stílusához illő dizájn</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="mit-kapsz">
+      <div class="section-head reveal">
+        <p class="kicker">03 — Mit kapsz</p>
+        <h2>Minden, ami kell.<br><em>Semmi, ami nem.</em></h2>
+        <p class="lead">Minden weboldalunk alapból tartalmazza azokat a funkciókat, amelyekre egy helyi vállalkozásnak tényleg szüksége van.</p>
+      </div>
+      <div class="features">
+        <div class="feature reveal"><span class="f-ico">📱</span><h4>Mobilbarát dizájn</h4><p>Az ügyfeleid többsége telefonról néz meg — úgyhogy ott is tökéletesen kell működnie.</p></div>
+        <div class="feature reveal"><span class="f-ico">🗓️</span><h4>Időpontkérés</h4><p>Egyszerű foglalási űrlap, vagy a már használt foglalórendszered (pl. Booksy, Salonic) beépítése.</p></div>
+        <div class="feature reveal"><span class="f-ico">💬</span><h4>Árlista &amp; szolgáltatások</h4><p>Átlátható, kategóriákba rendezett szolgáltatások — kevesebb „mennyibe kerül?” üzenet.</p></div>
+        <div class="feature reveal"><span class="f-ico">📸</span><h4>Galéria</h4><p>A munkáid a legjobb reklám. Látványos galéria, ami eladja a szolgáltatást.</p></div>
+        <div class="feature reveal"><span class="f-ico">📍</span><h4>Térkép &amp; nyitvatartás</h4><p>Google Térkép, cím, parkolási infó és nyitvatartás — mindig naprakészen.</p></div>
+        <div class="feature reveal"><span class="f-ico">🔎</span><h4>Alap SEO</h4><p>Úgy építjük fel az oldalt, hogy a Google értse, mivel foglalkozol és hol.</p></div>
+        <div class="feature reveal"><span class="f-ico">⚡</span><h4>Villámgyors betöltés</h4><p>Lassú oldalt senki nem vár ki. A mieink másodpercek alatt betöltenek.</p></div>
+        <div class="feature reveal"><span class="f-ico">🛠️</span><h4>Karbantartás</h4><p>Új ár, új szolgáltatás, szabadság? Szólsz, mi frissítjük. Nem kell hozzá értened.</p></div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section section-dark" id="folyamat">
+      <div class="section-head reveal">
+        <p class="kicker">04 — Folyamat</p>
+        <h2>Négy lépés, és<br><em>már élesben is van.</em></h2>
+        <p class="lead">Tudjuk, hogy szalont vezetni teljes munkaidő. Ezért úgy alakítottuk ki a folyamatot, hogy a lehető legkevesebb idődet vegye el.</p>
+      </div>
+      <ol class="timeline">
+        <li class="reveal"><span class="t-num">1</span><div><h4>Rövid beszélgetés</h4><p>15 perc telefonon vagy személyesen. Elmondod, mit szeretnél — mi kérdezünk, te válaszolsz.</p><span class="t-time">~15 perc</span></div></li>
+        <li class="reveal"><span class="t-num">2</span><div><h4>Elkészítjük a tervet</h4><p>A szalonod stílusához illő weboldalt tervezünk: színek, képek, szövegek. A szövegírást is mi intézzük.</p><span class="t-time">2–4 nap</span></div></li>
+        <li class="reveal"><span class="t-num">3</span><div><h4>Visszajelzés</h4><p>Megmutatjuk, te megmondod, mit változtassunk. Addig finomítjuk, amíg 100%-ig elégedett nem vagy.</p><span class="t-time">1–2 nap</span></div></li>
+        <li class="reveal"><span class="t-num">4</span><div><h4>Indulás</h4><p>Domain, tárhely, Google-beállítás — mindent elintézünk. Te csak megosztod a linket.</p><span class="t-time">1 nap</span></div></li>
+      </ol>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="gyik">
+      <div class="faq-wrap">
+        <div class="section-head reveal">
+          <p class="kicker">05 — GYIK</p>
+          <h2>Kérdésed van?<br><em>Jó eséllyel itt a válasz.</em></h2>
+          <p class="lead">Ha mégsem, hívj vagy írj nyugodtan — szívesen elmagyarázunk mindent, kötelezettség nélkül.</p>
+        </div>
+        <div class="faq">
+          <details class="reveal"><summary>Már van Facebook- és Instagram-oldalam. Minek nekem weboldal?</summary><p>A közösségi média remek a kapcsolattartásra, de a Google-keresésekben alig jelenik meg, és nem a tiéd — az algoritmus dönti el, ki lát. A weboldal a „digitális kirakatod”: ott van minden fontos infó, és oda tudod terelni a közösségi oldalakról érkezőket is. A kettő együtt működik a legjobban.</p></details>
+          <details class="reveal"><summary>Mennyibe kerül egy weboldal?</summary><p>Ez attól függ, milyen funkciókra van szükséged. Egy rövid beszélgetés után személyre szabott ajánlatot adunk — rejtett költségek nélkül. Célunk, hogy a weboldal már az első néhány új ügyféllel visszahozza az árát.</p></details>
+          <details class="reveal"><summary>Mennyi idő alatt készül el?</summary><p>Átlagosan egy héten belül. Ha minden anyag (logó, képek, árlista) megvan, akár gyorsabban is.</p></details>
+          <details class="reveal"><summary>Nincsenek jó fotóim. Akkor is működik?</summary><p>Igen. Segítünk kiválasztani a legjobb képeket a meglévőid közül, és szükség esetén minőségi, jogtiszta stockfotókkal egészítjük ki — ahogy a bemutató oldalainkon is látod.</p></details>
+          <details class="reveal"><summary>Ki frissíti az oldalt, ha változik valami?</summary><p>Mi. Szólsz, hogy változott az árlista vagy a nyitvatartás, és frissítjük. Nem kell semmilyen rendszert megtanulnod.</p></details>
+          <details class="reveal"><summary>Használhatom a meglévő foglalórendszeremet?</summary><p>Persze. Ha már használsz online foglalót, beépítjük az oldalba vagy odalinkeljük. Ha nincs, egy egyszerű időpontkérő űrlapot készítünk, ami e-mailben értesít.</p></details>
+          <details class="reveal"><summary>A domain és a tárhely kié lesz?</summary><p>A tiéd. A domain a te neveden lesz, így bármikor dönthetsz úgy, hogy máshol folytatod.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="kapcsolat">
+      <div class="blob blob-4"></div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p class="kicker">06 — Kapcsolat</p>
+          <h2>Legyen a te szalonod<br><em>a következő.</em></h2>
+          <p class="lead">Kérj ingyenes, kötelezettségmentes konzultációt. Megnézzük a jelenlegi online jelenlétedet, és elmondjuk, mit hozhat egy weboldal a vállalkozásodnak.</p>
+          <ul class="contact-list">
+            <li><span>Telefon</span><a href="tel:+36300000000">+36 30 000 0000</a></li>
+            <li><span>E-mail</span><a href="mailto:info@pelda.hu">info@pelda.hu</a></li>
+            <li><span>WhatsApp</span><a href="#">+36 30 000 0000</a></li>
+            <li><span>Terület</span><p>Budapest és környéke — online egész Magyarország</p></li>
+          </ul>
+        </div>
+        <form class="contact-form reveal" id="contactForm">
+          <div class="row">
+            <label><span>Neved</span><input type="text" name="name" required placeholder="Kovács Anna"></label>
+            <label><span>Vállalkozás neve</span><input type="text" name="business" placeholder="Anna Szépségszalon"></label>
+          </div>
+          <div class="row">
+            <label><span>Telefonszám</span><input type="tel" name="phone" required placeholder="+36 30 123 4567"></label>
+            <label><span>E-mail</span><input type="email" name="email" placeholder="anna@pelda.hu"></label>
+          </div>
+          <label><span>Milyen vállalkozásod van?</span>
+            <div class="chips">
+              <input type="radio" name="type" id="t1" value="Fodrászat" checked><label for="t1">Fodrászat</label>
+              <input type="radio" name="type" id="t2" value="Körömszalon"><label for="t2">Körömszalon</label>
+              <input type="radio" name="type" id="t3" value="Tetoválószalon"><label for="t3">Tetoválószalon</label>
+              <input type="radio" name="type" id="t4" value="Kozmetika"><label for="t4">Kozmetika</label>
+              <input type="radio" name="type" id="t5" value="Egyéb"><label for="t5">Egyéb</label>
+            </div>
+          </label>
+          <label><span>Üzenet (opcionális)</span><textarea name="message" rows="4" placeholder="Pl. van már weboldalam, de elavult…"></textarea></label>
+          <button type="submit" class="btn btn-primary btn-block">Konzultációt kérek <span class="arrow">→</span></button>
+          <p class="form-note">Általában 24 órán belül visszahívunk.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-big">nova<span>.</span></div>
+    <div class="footer-row">
+      <p>© <span id="year"></span> Nova Web Studio — Weboldalak helyi vállalkozásoknak.</p>
+      <p>Budapest · <a href="mailto:info@pelda.hu">info@pelda.hu</a> · <a href="tel:+36300000000">+36 30 000 0000</a></p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">Köszönjük! Hamarosan jelentkezünk. 🎉</div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
