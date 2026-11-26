@@ -1,15 +1,15 @@
-# Nova Web Studio — Portfolio
+# Nova Web Studio: Portfolio
 
 Portfolio site for our web agency, plus three fully working demo websites for local businesses.
 
 | Page | Path |
 |---|---|
 | Agency portfolio (main page) | `index.html` |
-| Hair salon demo — *Aurélia Hair Studio* | `demos/hair/index.html` |
-| Nail salon demo — *Gyöngy Nail Lounge* | `demos/nails/index.html` |
-| Tattoo studio demo — *Fekete Tinta Tattoo* | `demos/tattoo/index.html` |
+| Hair salon demo: *Aurélia Hair Studio* | `demos/hair/index.html` |
+| Nail salon demo: *Gyöngy Nail Lounge* | `demos/nails/index.html` |
+| Tattoo studio demo: *Fekete Tinta Tattoo* | `demos/tattoo/index.html` |
 
-Plain HTML/CSS/JS — no build step. Open `index.html` in a browser, or host it on GitHub Pages.
+Plain HTML/CSS/JS, no build step. Open `index.html` in a browser, or host it on GitHub Pages.
 
 ## Publish with GitHub Pages
 1. Repo → **Settings → Pages**

@@ -99,7 +99,7 @@
         else if (dir < 0 && y > 0) win.scrollTo(0, Math.max(0, y - Math.max(18, y * 0.08)));
         else { raf = null; return; }
         raf = requestAnimationFrame(step);
-      } catch (err) { raf = null; } // cross-origin (e.g. opened from file://) — just skip
+      } catch (err) { raf = null; } // cross-origin (e.g. opened from file://), just skip
     };
     dev.addEventListener('mouseenter', () => { dir = 1; if (!raf) raf = requestAnimationFrame(step); });
     dev.addEventListener('mouseleave', () => { dir = -1; if (!raf) raf = requestAnimationFrame(step); });
@@ -118,7 +118,7 @@
     });
   }
 
-  /* contact form (demo — connect to Formspree / e-mail service later) */
+  /* contact form (demo; connect to Formspree / e-mail service later) */
   const toast = $('#toast');
   $('#contactForm').addEventListener('submit', e => {
     e.preventDefault();
