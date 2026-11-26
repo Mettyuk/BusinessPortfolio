@@ -146,8 +146,30 @@ form input::placeholder{color:rgba(255,255,255,.35)}
 input[type=date],input[type=time]{color-scheme:dark}
 form .btn{justify-content:center;background:#f0bcb6;color:var(--plum);font-weight:600}
 form .btn:hover{background:#fff}
-.ok{display:none;text-align:center;padding:50px 20px}
+form .btn b{font-weight:600}
+form .btn:disabled{opacity:.75;cursor:progress;transform:none}
+form select:disabled{opacity:.5;cursor:not-allowed}
+#when{display:grid;gap:16px}
+.chk{display:flex;gap:10px;align-items:center;font-size:.88rem;color:rgba(251,241,238,.8);cursor:pointer}
+.chk input{width:18px;height:18px;padding:0;flex:none;accent-color:#f0bcb6}
+.err{display:none;color:#ffb4a8;font-size:.8rem;line-height:1.4;margin-top:6px}
+label.bad .err{display:block}
+label.bad input,label.bad select{border-color:#ff9c8f}
+.form-alert{display:none;background:rgba(255,156,143,.12);border:1px solid rgba(255,156,143,.4);color:#ffd2cb;padding:12px 16px;border-radius:14px;font-size:.88rem}
+.form-alert.show{display:block}
+.spin{display:none;width:14px;height:14px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:sp .7s linear infinite}
+.sending .spin{display:inline-block}
+@keyframes sp{to{transform:rotate(360deg)}}
+.ok{text-align:center;padding:40px 10px;outline:none}
 .ok h3{font-size:2.2rem;margin-bottom:8px}
+.ok dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;text-align:left;max-width:360px;margin:26px auto 30px;font-size:.92rem;padding:20px 22px;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
+.ok dt{color:rgba(251,241,238,.55)}
+.ok:focus-visible{outline:none}
+.ok .btn{background:transparent;border-color:rgba(255,255,255,.3);color:var(--blush)}
+.ok .btn:hover{background:rgba(255,255,255,.08)}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--rose-d);outline-offset:3px}
+.book :focus-visible{outline-color:#f0bcb6}
 
 /* insta */
 .insta{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:50px}
@@ -191,6 +213,13 @@ footer{padding:70px 0 40px}
   .split-img .circle b{font-size:1.7rem}
   .gallery-sec,.book{border-radius:30px}
 }
+@media (hover:none){.item figcaption{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .arch,.float-tag,.ribbon div{animation:none}
+  .rv{opacity:1;transform:none}
+  *,*::before,*::after{transition-duration:.01ms!important}
+}
 </style>
 </head>
 <body>
@@ -205,7 +234,7 @@ footer{padding:70px 0 40px}
     <a href="#velemenyek">Vélemények</a>
     <a href="#foglalas" class="btn btn-rose">Foglalás</a>
   </div>
-  <button class="burger" id="burger">Menü</button>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="links">Menü</button>
 </nav>
 
 <header class="hero">
@@ -237,11 +266,12 @@ footer{padding:70px 0 40px}
     <div class="center rv"><span class="eyebrow">Szolgáltatások</span><h2 style="margin-top:18px">Válaszd ki a <em>kedvenced</em></h2></div>
     <div class="menu-grid">
       <div class="svc rv">
-        <div class="ico">🤍</div><h3>Manikűr</h3><p>Ápolt, egészséges körmök — természetes szépség.</p>
+        <div class="ico">🤍</div><h3>Manikűr &amp; pedikűr</h3><p>Ápolt, egészséges körmök kézen és lábon.</p>
         <ul>
           <li><span>Klasszikus manikűr<small>45 perc</small></span><span>6 500 Ft</span></li>
           <li><span>Manikűr + lakkozás<small>60 perc</small></span><span>8 500 Ft</span></li>
           <li><span>Japán manikűr<small>50 perc</small></span><span>9 000 Ft</span></li>
+          <li><span>Spa pedikűr<small>60 perc</small></span><span>10 500 Ft</span></li>
         </ul>
       </div>
       <div class="svc feat rv">
@@ -270,18 +300,18 @@ footer{padding:70px 0 40px}
   <div class="wrap">
     <div class="center rv"><span class="eyebrow">Galéria</span><h2 style="margin-top:18px">Friss <em>munkáink</em></h2></div>
     <div class="filters rv">
-      <button class="on" data-f="all">Összes</button>
-      <button data-f="art">Nail art</button>
-      <button data-f="minimal">Minimal</button>
-      <button data-f="color">Színes</button>
+      <button class="on" data-f="all" aria-pressed="true">Összes</button>
+      <button data-f="art" aria-pressed="false">Nail art</button>
+      <button data-f="minimal" aria-pressed="false">Minimal</button>
+      <button data-f="color" aria-pressed="false">Színes</button>
     </div>
     <div class="grid rv" id="grid">
-      <figure class="item" data-c="art"><img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=600&q=75&auto=format&fit=crop" alt=""><figcaption>„Love” nail art</figcaption></figure>
-      <figure class="item" data-c="minimal"><img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=600&q=75&auto=format&fit=crop" alt=""><figcaption>Natúr nude</figcaption></figure>
-      <figure class="item" data-c="art"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=75&auto=format&fit=crop" alt=""><figcaption>Teknőc minta</figcaption></figure>
-      <figure class="item" data-c="color"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=600&q=75&auto=format&fit=crop" alt=""><figcaption>Pasztell mix</figcaption></figure>
-      <figure class="item" data-c="minimal"><img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=600&q=75&auto=format&fit=crop" alt=""><figcaption>Precíz előkészítés</figcaption></figure>
-      <figure class="item" data-c="color"><img src="https://images.unsplash.com/photo-1599948128020-9a44505b0d1b?w=600&q=75&auto=format&fit=crop" alt=""><figcaption>Nyári színek</figcaption></figure>
+      <figure class="item" data-c="art"><img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=600&q=75&auto=format&fit=crop" alt="„Love” feliratú nail art" loading="lazy"><figcaption>„Love” nail art</figcaption></figure>
+      <figure class="item" data-c="minimal"><img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=600&q=75&auto=format&fit=crop" alt="Natúr nude manikűr" loading="lazy"><figcaption>Natúr nude</figcaption></figure>
+      <figure class="item" data-c="art"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=75&auto=format&fit=crop" alt="Teknőc mintás körmök" loading="lazy"><figcaption>Teknőc minta</figcaption></figure>
+      <figure class="item" data-c="color"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=600&q=75&auto=format&fit=crop" alt="Pasztell színű gél lakk" loading="lazy"><figcaption>Pasztell mix</figcaption></figure>
+      <figure class="item" data-c="minimal"><img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=600&q=75&auto=format&fit=crop" alt="Köröm előkészítése manikűr előtt" loading="lazy"><figcaption>Precíz előkészítés</figcaption></figure>
+      <figure class="item" data-c="color"><img src="https://images.unsplash.com/photo-1599948128020-9a44505b0d1b?w=600&q=75&auto=format&fit=crop" alt="Élénk nyári színű körmök" loading="lazy"><figcaption>Nyári színek</figcaption></figure>
     </div>
   </div>
 </section>
@@ -321,12 +351,12 @@ footer{padding:70px 0 40px}
       <h2 style="margin:18px 0 18px">A tökéletes <em>ajándék</em> — mindig.</h2>
       <p style="color:#6d5560">Születésnap, névnap, Valentin-nap vagy csak úgy. Válaszd ki az összeget, mi pedig gyönyörű, nyomtatott vagy digitális utalványt készítünk. 6 hónapig érvényes, bármely szolgáltatásra beváltható.</p>
       <div class="amounts" id="amounts">
-        <button data-v="10 000 Ft">10 000 Ft</button>
-        <button class="on" data-v="15 000 Ft">15 000 Ft</button>
-        <button data-v="20 000 Ft">20 000 Ft</button>
-        <button data-v="30 000 Ft">30 000 Ft</button>
+        <button data-v="10 000 Ft" aria-pressed="false">10 000 Ft</button>
+        <button class="on" data-v="15 000 Ft" aria-pressed="true">15 000 Ft</button>
+        <button data-v="20 000 Ft" aria-pressed="false">20 000 Ft</button>
+        <button data-v="30 000 Ft" aria-pressed="false">30 000 Ft</button>
       </div>
-      <a href="#foglalas" class="btn btn-rose">Utalványt kérek</a>
+      <a href="#foglalas" class="btn btn-rose" id="vCta">Utalványt kérek</a>
     </div>
   </div>
 </section>
@@ -347,7 +377,7 @@ footer{padding:70px 0 40px}
     <div class="rv">
       <span class="eyebrow">Időpontfoglalás</span>
       <h2 style="margin:18px 0 18px">Kényeztesd magad <em>— megérdemled.</em></h2>
-      <p style="color:rgba(251,241,238,.7)">Küldd el az időpontkérésedet, és 1 órán belül visszajelzünk. Sürgős esetben hívj minket: <b>+36 1 000 0000</b></p>
+      <p style="color:rgba(251,241,238,.7)">Küldd el, mit szeretnél, és nyitvatartási időben 1 órán belül visszahívunk, hogy véglegesítsük az időpontot. Sürgős esetben hívj minket: <b>+36 1 000 0000</b></p>
       <ul class="hours" id="hours">
         <li data-d="1"><span>Hétfő</span><span>10:00 – 19:00</span></li>
         <li data-d="2"><span>Kedd</span><span>10:00 – 19:00</span></li>
@@ -359,20 +389,52 @@ footer{padding:70px 0 40px}
       </ul>
     </div>
     <div class="rv">
-      <form id="form">
-        <label><span>Szolgáltatás</span><select required><option value="">Válassz…</option><option>Gél lakk</option><option>Műköröm építés</option><option>Töltés</option><option>Klasszikus manikűr</option><option>Spa pedikűr</option><option>Ajándékutalvány</option></select></label>
-        <div class="fr">
-          <label><span>Dátum</span><input type="date" required id="d"></label>
-          <label><span>Időpont</span><input type="time" required value="14:00" step="1800"></label>
+      <form id="form" novalidate>
+        <label id="f-svc"><span>Szolgáltatás</span>
+          <select required id="svc" name="szolgaltatas" aria-describedby="e-svc">
+            <option value="">Válassz…</option>
+            <optgroup label="Manikűr &amp; pedikűr">
+              <option value="Klasszikus manikűr" data-min="45">Klasszikus manikűr · 45 perc</option>
+              <option value="Manikűr + lakkozás" data-min="60">Manikűr + lakkozás · 60 perc</option>
+              <option value="Japán manikűr" data-min="50">Japán manikűr · 50 perc</option>
+              <option value="Spa pedikűr" data-min="60">Spa pedikűr · 60 perc</option>
+            </optgroup>
+            <optgroup label="Gél lakk &amp; műköröm">
+              <option value="Gél lakk" data-min="60">Gél lakk · 60 perc</option>
+              <option value="Műköröm építés" data-min="120">Műköröm építés · 120 perc</option>
+              <option value="Töltés" data-min="90">Töltés · 90 perc</option>
+            </optgroup>
+            <optgroup label="Egyéb">
+              <option value="utalvany">Ajándékutalvány (nem kell időpont)</option>
+            </optgroup>
+          </select>
+          <small class="err" id="e-svc">Válaszd ki, mit szeretnél.</small>
+        </label>
+        <div id="when">
+          <div class="fr">
+            <label id="f-date"><span>Dátum</span><input type="date" required id="d" name="datum" aria-describedby="e-date"><small class="err" id="e-date" aria-live="polite">Válassz dátumot.</small></label>
+            <label id="f-time"><span>Kezdés</span><select required id="t" name="idopont" aria-describedby="e-time"></select><small class="err" id="e-time">Válassz kezdési időpontot.</small></label>
+          </div>
+          <label class="chk"><input type="checkbox" id="addon" name="nailart"> Nail art vagy babyboomer is kérek (+30 perc)</label>
+        </div>
+        <div class="fr" id="vRow" hidden>
+          <label><span>Összeg</span><select id="vAmt" name="osszeg"><option>10 000 Ft</option><option selected>15 000 Ft</option><option>20 000 Ft</option><option>30 000 Ft</option></select></label>
+          <label><span>Formátum</span><select id="vFmt" name="formatum"><option>Digitális (PDF)</option><option>Nyomtatott, a szalonban átvehető</option></select></label>
         </div>
         <div class="fr">
-          <label><span>Név</span><input type="text" required placeholder="Neved"></label>
-          <label><span>Telefon</span><input type="tel" required placeholder="+36 30 123 4567"></label>
+          <label id="f-name"><span>Név</span><input type="text" required id="nm" name="nev" autocomplete="name" placeholder="Neved" aria-describedby="e-name"><small class="err" id="e-name">Add meg a neved.</small></label>
+          <label id="f-tel"><span>Telefon</span><input type="tel" required id="tel" name="telefon" autocomplete="tel" inputmode="tel" placeholder="+36 30 123 4567" aria-describedby="e-tel"><small class="err" id="e-tel">Ezen a számon hívunk vissza. Adj meg egy érvényes számot.</small></label>
         </div>
-        <label><span>Megjegyzés (pl. inspiráció)</span><input type="text" placeholder="Pl. pasztell francia, rövid forma"></label>
-        <button class="btn" type="submit">Időpont kérése ✦</button>
+        <label><span>Megjegyzés (pl. inspiráció)</span><input type="text" id="note" name="megjegyzes" placeholder="Pl. pasztell francia, rövid forma"></label>
+        <p class="form-alert" id="alert" role="alert"></p>
+        <button class="btn" type="submit" id="sub"><i class="spin" aria-hidden="true"></i><b id="subTxt">Időpont kérése ✦</b></button>
       </form>
-      <div class="ok" id="ok"><h3>Köszönjük! 💕</h3><p style="color:rgba(251,241,238,.7)">Hamarosan visszaigazoljuk az időpontodat.</p></div>
+      <div class="ok" id="ok" hidden tabindex="-1">
+        <h3>Megkaptuk! 💕</h3>
+        <p style="color:rgba(251,241,238,.7)" id="okTxt">Nyitvatartási időben 1 órán belül visszahívunk, és véglegesítjük az időpontot.</p>
+        <dl id="sum"></dl>
+        <button class="btn" type="button" id="again">Új kérés</button>
+      </div>
     </div>
   </div>
 </section>
@@ -405,31 +467,150 @@ footer{padding:70px 0 40px}
 
 <script>
 (()=>{
-  const nav=document.getElementById('nav');
-  document.getElementById('burger').onclick=()=>nav.classList.toggle('open');
-  document.querySelectorAll('#links a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
+  const $=id=>document.getElementById(id);
+  const nav=$('nav'),burger=$('burger');
+  const setNav=open=>{nav.classList.toggle('open',open);burger.setAttribute('aria-expanded',open)};
+  burger.onclick=()=>setNav(!nav.classList.contains('open'));
+  document.querySelectorAll('#links a').forEach(a=>a.addEventListener('click',()=>setNav(false)));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')setNav(false)});
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
   document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
   // filter
   document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
-    document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+    document.querySelectorAll('.filters button').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});
     document.querySelectorAll('.item').forEach(it=>it.classList.toggle('hide',b.dataset.f!=='all'&&it.dataset.c!==b.dataset.f));
   });
 
   // voucher
   document.querySelectorAll('#amounts button').forEach(b=>b.onclick=()=>{
-    document.querySelectorAll('#amounts button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
-    const v=document.getElementById('cardVal');v.style.opacity=0;setTimeout(()=>{v.textContent=b.dataset.v;v.style.opacity=1},200);
+    document.querySelectorAll('#amounts button').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});
+    const v=$('cardVal');v.style.opacity=0;setTimeout(()=>{v.textContent=b.dataset.v;v.style.opacity=1},200);
   });
-  document.getElementById('cardVal').style.transition='opacity .2s';
+  $('cardVal').style.transition='opacity .2s';
 
   // today's hours
   const today=new Date().getDay();document.querySelector(`#hours li[data-d="${today}"]`).classList.add('today');
 
-  // form
-  const d=document.getElementById('d');const t=new Date();t.setDate(t.getDate()+1);d.value=t.toISOString().slice(0,10);d.min=new Date().toISOString().slice(0,10);
-  document.getElementById('form').onsubmit=e=>{e.preventDefault();e.target.style.display='none';document.getElementById('ok').style.display='block'};
+  // ---- booking form ----
+  // Opening hours are read from the visible list, so the slots can never disagree with it.
+  const hours={};
+  document.querySelectorAll('#hours li').forEach(li=>{
+    const m=li.lastElementChild.textContent.match(/(\d+):(\d+)\s*–\s*(\d+):(\d+)/);
+    hours[li.dataset.d]=m?[m[1]*60+ +m[2],m[3]*60+ +m[4]]:null;
+  });
+  const pad=n=>String(n).padStart(2,'0');
+  const iso=x=>`${x.getFullYear()}-${pad(x.getMonth()+1)}-${pad(x.getDate())}`; // local date, not UTC
+  const parse=s=>{const[y,m,dd]=s.split('-').map(Number);return new Date(y,m-1,dd)};
+  const fmtDate=x=>x.toLocaleDateString('hu-HU',{year:'numeric',month:'long',day:'numeric',weekday:'long'});
+  const DAYS=['Vasárnap','Hétfőn','Kedden','Szerdán','Csütörtökön','Pénteken','Szombaton'];
+
+  const f=$('form'),svc=$('svc'),d=$('d'),t=$('t'),addon=$('addon'),nm=$('nm'),tel=$('tel'),
+        sub=$('sub'),subTxt=$('subTxt'),alertEl=$('alert'),ok=$('ok');
+  const isVoucher=()=>svc.value==='utalvany';
+  const duration=()=>(+(svc.selectedOptions[0]?.dataset.min)||60)+(addon.checked?30:0);
+
+  function setErr(id,bad,text){
+    const l=$(id);l.classList.toggle('bad',bad);
+    if(text)l.querySelector('.err').textContent=text;
+    l.querySelector('input,select').setAttribute('aria-invalid',bad);
+  }
+
+  function nextOpenDay(){
+    const x=new Date();x.setDate(x.getDate()+1);
+    while(!hours[x.getDay()])x.setDate(x.getDate()+1);
+    return iso(x);
+  }
+
+  function fillSlots(){
+    const prev=t.value;t.innerHTML='';
+    let msg='';const slots=[];
+    if(!d.value)msg='Válassz dátumot.';
+    else{
+      const day=parse(d.value),h=hours[day.getDay()],now=new Date();
+      if(d.value<iso(now))msg='Ez a nap már elmúlt.';
+      else if(!h)msg=`${DAYS[day.getDay()]} zárva vagyunk. Válassz másik napot.`;
+      else{
+        const earliest=d.value===iso(now)?now.getHours()*60+now.getMinutes()+60:0;
+        for(let m=h[0];m+duration()<=h[1];m+=30)if(m>=earliest)slots.push(m);
+        if(!slots.length)msg=earliest?'Mára már nincs szabad kezdés. Válassz másik napot.':'Ez a kezelés erre a napra már nem fér bele. Válassz másik napot.';
+      }
+    }
+    setErr('f-date',!!msg,msg);
+    if(msg){t.add(new Option('–','')); t.disabled=true; return}
+    t.disabled=false;
+    t.add(new Option('Válassz…',''));
+    slots.forEach(m=>{const v=`${m/60|0}:${pad(m%60)}`;t.add(new Option(v,v))});
+    if([...t.options].some(o=>o.value===prev&&prev))t.value=prev;
+  }
+
+  function mode(){
+    const v=isVoucher();
+    $('when').hidden=v;$('vRow').hidden=!v;
+    subTxt.textContent=v?'Utalvány kérése ✦':'Időpont kérése ✦';
+    if(!v)fillSlots();
+  }
+
+  svc.onchange=()=>{setErr('f-svc',false);mode()};
+  d.onchange=fillSlots;addon.onchange=fillSlots;
+  t.onchange=()=>setErr('f-time',false);
+  nm.oninput=()=>{if(nm.value.trim().length>=2)setErr('f-name',false)};
+  tel.oninput=()=>{if(tel.value.replace(/\D/g,'').length>=9)setErr('f-tel',false)};
+
+  // "Utalványt kérek" carries the chosen amount into the form
+  $('vCta').addEventListener('click',()=>{
+    svc.value='utalvany';$('vAmt').value=document.querySelector('#amounts .on').dataset.v;
+    setErr('f-svc',false);mode();
+  });
+
+  function validate(){
+    const bad=[];
+    const chk=(id,cond,el)=>{setErr(id,!cond);if(!cond)bad.push(el)};
+    chk('f-svc',!!svc.value,svc);
+    if(svc.value&&!isVoucher()){
+      if(t.disabled){setErr('f-date',true);bad.push(d)}
+      else chk('f-time',!!t.value,t);
+    }
+    chk('f-name',nm.value.trim().length>=2,nm);
+    chk('f-tel',tel.value.replace(/\D/g,'').length>=9,tel);
+    if(bad[0])bad[0].focus();
+    return !bad.length;
+  }
+
+  function summary(){
+    const rows=isVoucher()
+      ?[['Utalvány',$('vAmt').value],['Formátum',$('vFmt').value]]
+      :[['Kezelés',svc.value+(addon.checked?' + nail art':'')],['Időpont',`${fmtDate(parse(d.value))}, ${t.value}`]];
+    rows.push(['Név',nm.value.trim()],['Telefon',tel.value.trim()]);
+    const dl=$('sum');dl.innerHTML='';
+    rows.forEach(([k,v])=>{const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=k;dd.textContent=v;dl.append(dt,dd)});
+    $('okTxt').textContent=isVoucher()
+      ?'Nyitvatartási időben 1 órán belül visszahívunk, és egyeztetjük az utalvány átadását.'
+      :'Nyitvatartási időben 1 órán belül visszahívunk, és véglegesítjük az időpontot.';
+  }
+
+  f.onsubmit=e=>{
+    e.preventDefault();alertEl.classList.remove('show');
+    if(!validate())return;
+    if(!navigator.onLine){
+      alertEl.textContent='Nincs internetkapcsolat, ezért nem tudtuk elküldeni. Próbáld újra, vagy hívj minket: +36 1 000 0000.';
+      alertEl.classList.add('show');return;
+    }
+    sub.disabled=true;f.classList.add('sending');subTxt.textContent='Küldés…';
+    // Demo only: replace this timeout with a real request (e.g. Formspree) and show alertEl on failure.
+    setTimeout(()=>{
+      summary();f.hidden=true;ok.hidden=false;ok.focus();
+      sub.disabled=false;f.classList.remove('sending');
+    },700);
+  };
+
+  $('again').onclick=()=>{
+    f.reset();d.value=nextOpenDay();
+    ['f-svc','f-date','f-time','f-name','f-tel'].forEach(id=>setErr(id,false));
+    mode();ok.hidden=true;f.hidden=false;svc.focus();
+  };
+
+  d.min=iso(new Date());d.value=nextOpenDay();mode();
 })();
 </script>
 </body>
